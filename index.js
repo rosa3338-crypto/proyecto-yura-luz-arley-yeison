@@ -1,4 +1,4 @@
-const express = require('express');
+const express = relquire('express');
 const app = express();
 
 app.use(express.json());
@@ -13,3 +13,4 @@ app.listen(PUERTO, () => {
   console.log(`Servidor activo en el puerto ${PUERTO}`);
 });
 
+6rthrthrhter
