@@ -1,15 +1,10 @@
 const express = require('express');
 const app = express();
-
 app.use(express.json());
 
-const rutasReservas = require('./src/routes/reservas');
-
-app.use('/reservas', rutasReservas);
-
-const PUERTO = process.env.PORT || 3000;
-
-app.listen(PUERTO, () => {
-  console.log(`Servidor activo en el puerto ${PUERTO}`);
+app.get('/', (req, res) => {
+  res.send('API funcionando');
 });
+
+app.listen(3000, () => console.log('Servidor activo en el puerto 3000'));
 
