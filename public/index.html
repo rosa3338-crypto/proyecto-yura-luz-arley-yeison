@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema de Reservas</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f4f4f9; }
+    .container { display: flex; gap: 20px; flex-wrap: wrap; }
+    .seccion { background: white; padding: 20px; border-radius: 8px; flex: 1; min-width: 300px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input, select, button { display: block; width: 100%; margin: 10px 0; padding: 8px; box-sizing: border-box; }
+    button { background: #007BFF; color: white; border: none; cursor: pointer; border-radius: 4px; }
+    .btn-eliminar { background: #dc3545; margin-top: 5px; }
+    .item-lista { background: #f9f9f9; padding: 10px; margin-bottom: 10px; border-left: 4px solid #007BFF; }
+  </style>
+</head>
+<body>
+  <h1>Gestión de Espacios y Reservas</h1>
+  <div class="container">
+    <div class="seccion">
+      <h2>Espacios</h2>
+      <form id="form-espacio">
+        <input type="text" id="esp-nombre" placeholder="Nombre (ej. Sala A)" required>
+        <input type="text" id="esp-ubicacion" placeholder="Ubicación (ej. Piso 1)" required>
+        <input type="number" id="esp-capacidad" placeholder="Capacidad (ej. 10)" required>
+        <button type="submit">Guardar Espacio</button>
+      </form>
+      <h3>Lista de Espacios</h3>
+      <div id="lista-espacios">Cargando...</div>
+    </div>
+    <div class="seccion">
+      <h2>Reservas</h2>
+      <form id="form-reserva">
+        <select id="res-espacio" required><option value="">Seleccione un espacio...</option></select>
+        <input type="text" id="res-solicitante" placeholder="Tu Nombre" required>
+        <input type="date" id="res-fecha" required>
+        <input type="time" id="res-inicio" required>
+        <input type="time" id="res-fin" required>
+        <button type="submit">Crear Reserva</button>
+      </form>
+      <h3>Lista de Reservas</h3>
+      <div id="lista-reservas">Cargando...</div>
+    </div>
+  </div>
+  <script src="frontend.js"></script>
+</body>
+</html>
